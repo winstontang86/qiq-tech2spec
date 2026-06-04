@@ -51,17 +51,17 @@ qiq-tech2spec/
 
 ## 运行时产物
 
-skill 在被消费的项目仓库内只写以下产物：
+最终交付产物**只有规格书一份**，与技术方案文档同目录；覆盖率报告等中间 / 过程产物统一收口到 `.qiqskills/tech2spec/<方案名>/`：
 
 ```
 <技术方案文档所在目录>/
-└── <方案名>-spec.md
+└── <方案名>-spec.md              # 最终交付：实现规格书（与方案同目录）
 
-.qiqskills/tech2spec/<方案名>/
-└── SPEC_COVERAGE.md
+.qiqskills/tech2spec/<方案名>/    # 中间产物目录
+└── SPEC_COVERAGE.md             # 覆盖率报告等过程产物
 ```
 
-若用户只粘贴方案正文且没有源文档路径，则两个产物都写入 `.qiqskills/tech2spec/<方案名>/`。
+若用户只粘贴方案正文且没有源文档路径，则规格书与中间产物一并写入 `.qiqskills/tech2spec/<方案名>/`。
 
 ## 触发词
 

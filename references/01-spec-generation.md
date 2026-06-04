@@ -175,9 +175,9 @@ Layer 4: interfaces/http, interfaces/consumer
 
 1. 读取技术方案原文，按章节做信息提取（不要漏掉任何接口、字段、错误码）。
 2. 如需要沿用现仓库，进行只读观察并记录证据；无法确定的风格不要臆测。
-3. 填充 `<方案名>-spec.md` 模板，逐字段、逐错误码、逐流程精确描述。
+3. 填充 `<方案名>-spec.md` 模板，逐字段、逐错误码、逐流程精确描述；规格书作为最终交付产物，输出位置**与原始技术方案文档同目录**（用户仅粘贴方案正文、未提供源文件路径时，规格书与覆盖率报告一并写入 `.qiqskills/tech2spec/<方案名>/`）。
 4. 对规格书中所有 DDL/DML/查询 SQL 执行内置 SQL 规范自检：先按 §2 SQL 规范自检规则修正 MUST 违规与重要 RECOMMEND 问题，再填写 §2.1.1 自检表；未解决 MUST 违规时禁止交付。
-5. **同步产出 `SPEC_COVERAGE.md`**（按 [@templates/SPEC_COVERAGE.md](../templates/SPEC_COVERAGE.md)）到 `.qiqskills/tech2spec/<方案名>/SPEC_COVERAGE.md`：逐节、逐表、逐 Redis key、逐时序图、逐故障表项映射到规格书章节。**未覆盖项 = 0** 才算合格交付；确需豁免时必须显式登记。
+5. **同步产出 `SPEC_COVERAGE.md`**（按 [@templates/SPEC_COVERAGE.md](../templates/SPEC_COVERAGE.md)）到 `.qiqskills/tech2spec/<方案名>/SPEC_COVERAGE.md`：覆盖率报告及其他中间 / 过程产物（自检日志、待确认问题清单等）**只允许**写入 `.qiqskills/tech2spec/<方案名>/` 目录，不得与规格书同放在方案目录下。逐节、逐表、逐 Redis key、逐时序图、逐故障表项映射到规格书章节。**未覆盖项 = 0** 才算合格交付；确需豁免时必须显式登记。
 6. **全量回扫自检**（以下逐项核对，缺一项即返工）：
    - [ ] 方案中的每张表都有 DDL（grep `CREATE TABLE` 与方案存储设计节对比）。
    - [ ] 规格书中所有 DDL/DML/查询 SQL 已按 §2 SQL 规范自检规则修正，MUST 未解决项 = 0；重要 RECOMMEND 未采纳项均已在 §2.1.1 写明原因。

@@ -1,6 +1,6 @@
 # 规格书覆盖率报告（SPEC_COVERAGE）
 
-> 与 `<方案名>-spec.md` **同步产出**；写入 `.qiqskills/tech2spec/<方案名>/SPEC_COVERAGE.md`。
+> 与 `<方案名>-spec.md` **同步产出**；写入 `.qiqskills/<方案名>/SPEC_COVERAGE.md`。
 >
 > 一票否决权：任何“未覆盖”项必须显式豁免，否则本次规格书交付不合格。
 

@@ -6,7 +6,7 @@
 
 - 来源方案：{{原始方案路径/标题/版本}}
 - 仓库证据：{{未提供 / 已只读查看，证据见各章节}}
-- 覆盖率报告：`.qiqskills/tech2spec/<方案名>/SPEC_COVERAGE.md`（与本规格书同步产出）
+- 覆盖率报告：`.qiqskills/<方案名>/SPEC_COVERAGE.md`（与本规格书同步产出）
 - 产出时间：{{datetime}}
 
 ---

@@ -38,9 +38,11 @@ fi
 # ---------- frontmatter 中声明的语义版本（可选） ----------
 SKILL_VERSION_DECL="$(awk -F': *' '/^version:/{print $2; exit}' SKILL.md | tr -d '\r' | tr -d ' ')"
 
-# ---------- 版本号：优先 $VERSION，其次 git describe，再次日期戳 ----------
+# ---------- 版本号：优先 $VERSION，其次 SKILL.md 声明，再次 git describe，再次 date ----------
 if [[ -n "${VERSION:-}" ]]; then
     PKG_VERSION="${VERSION}"
+elif [[ -n "${SKILL_VERSION_DECL}" ]]; then
+    PKG_VERSION="${SKILL_VERSION_DECL}"
 elif git -C "${ROOT_DIR}" rev-parse --git-dir >/dev/null 2>&1; then
     if PKG_VERSION="$(git -C "${ROOT_DIR}" describe --tags --always --dirty 2>/dev/null)"; then
         :
